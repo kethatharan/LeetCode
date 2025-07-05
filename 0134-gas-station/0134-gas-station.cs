@@ -4,13 +4,6 @@ public class Solution {
         int co=gas.Length;
         int ga=0;
         int cos=0;
-        for(int i=0;i<co;i++){
-            ga+=gas[i];
-            cos+=cost[i];
-        }
-        if(cos>ga){
-            return -1;
-        }
         int avail=0;
         int ind=0;
         for(int i=0;i<co;i++){
@@ -19,6 +12,11 @@ public class Solution {
                 ind=i+1;
                 avail=0;
             }
+            ga+=gas[i];
+            cos+=cost[i];
+        }
+        if(cos>ga){
+            return -1;
         }
         return ind;
     }
