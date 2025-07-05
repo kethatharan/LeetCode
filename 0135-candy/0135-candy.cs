@@ -18,7 +18,6 @@ public class Solution {
         int sum=0;
         foreach(var c in can){
             sum+=c;
-            Console.WriteLine(c);
         }
         return sum;
     }
