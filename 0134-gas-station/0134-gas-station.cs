@@ -1,23 +1,22 @@
 public class Solution {
     public int CanCompleteCircuit(int[] gas, int[] cost) {
-        int start=0;
         int co=gas.Length;
-        int ga=0;
-        int cos=0;
-        int avail=0;
-        int ind=0;
+        int totG=0;
+        int totC=0;
+        int tank=0;
+        int start=0;
         for(int i=0;i<co;i++){
-            avail=(avail+gas[i])-cost[i];
-            if(avail<0){
-                ind=i+1;
-                avail=0;
+            tank=(tank+gas[i])-cost[i];
+            if(tank<0){
+                start=i+1;
+                tank=0;
             }
-            ga+=gas[i];
-            cos+=cost[i];
+            totG+=gas[i];
+            totC+=cost[i];
         }
-        if(cos>ga){
+        if(totC>totG){
             return -1;
         }
-        return ind;
+        return start;
     }
 }
