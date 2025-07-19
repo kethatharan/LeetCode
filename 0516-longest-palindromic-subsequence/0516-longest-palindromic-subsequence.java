@@ -3,11 +3,7 @@ class Solution {
         int m=s.length();
        int n=s.length();
        StringBuilder stringBuilder = new StringBuilder(s);
-        
-        // Use the reverse() method to reverse the StringBuilder content
         stringBuilder.reverse();
-        
-        // Convert the StringBuilder back to a String
         String r = stringBuilder.toString();
        int ans=0;
        int[][] dp=new int[m+1][n+1];
